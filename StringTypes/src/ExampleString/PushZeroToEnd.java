@@ -13,7 +13,6 @@ public class PushZeroToEnd {
 		}
 		return inputarray;
 	}
-
 	public static void main(String[] args) {
 		int[] inputarray = { 25, 16, 0, 23, 10, 0, 89 };
 		int[] output = Pushingzero(inputarray, 7);
