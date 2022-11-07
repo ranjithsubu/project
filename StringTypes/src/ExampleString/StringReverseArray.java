@@ -6,7 +6,7 @@ public class StringReverseArray {
 		String country = "";
 		for (int i = array.length - 1; i >= 0; i--) {
 			country = country + array[i];
-		}
+		} // if(name.charAt(i)=='e';
 
 		return country;
 
