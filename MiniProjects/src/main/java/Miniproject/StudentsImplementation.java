@@ -47,7 +47,7 @@ public class StudentsImplementation {
 		ArrayList<Student> studentlist = new ArrayList<Student>();
 		Student s1 = new Student(111, "ranjith", "civil1st", civil1styearsl);
 		Student s2 = new Student(222, "ramesh", "civil2nd", civil2ndyearsl);
-		Student s3 = new Student(333, " suna bana", "cse", csesl);
+		Student s3 = new Student(333, " suna pana", "cse", csesl);
 		studentlist.add(s1);
 		studentlist.add(s2);
 		studentlist.add(s3);
@@ -75,7 +75,6 @@ public class StudentsImplementation {
 	 * ispassed = false; }
 	 * 
 	 * } studentdata.setTotal(sum); studentsresult.add(studentdata);
-	 * 
 	 * 
 	 * } return studentlist; }
 	 */
@@ -148,20 +147,28 @@ public class StudentsImplementation {
 	 * }
 	 */
 	private List<Student> getHightestTotal(List<Student> studentlist) {
-		List<Student> students = new ArrayList<Student>();
-		int higthTotal = 0;
-		Student hightesttotal = null;
-		for (Student student2 : students) {
-			if (student2.getTotal() > higthTotal) {
-				higthTotal = student2.getTotal();
+		List<Student> studentshightotal = new ArrayList<Student>();
+		for (Student studentData : studentlist) {
+			if (studentshightotal.size() == 0) {
+				studentshightotal.add(studentData);
+			} else {
+				Student highestmark = studentshightotal.get(0);
+				if (highestmark.getTotal() == studentData.getTotal()) {
+					studentshightotal.add(studentData);
 
-				hightesttotal = student2;
+				}
+				else if (highestmark.getTotal()<studentData.getTotal()){
+					for (Iterator iterator = studentshightotal.iterator(); iterator.hasNext();) {
+						iterator.next();
+						iterator.remove();
+					}
+					studentshightotal.add(studentData);
+				}
 
 			}
-			students.add(hightesttotal);
-
 		}
-		return students;
+		return studentshightotal;
+
 	}
 
 	public static void main(String[] args) {

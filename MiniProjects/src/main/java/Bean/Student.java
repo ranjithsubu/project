@@ -3,13 +3,7 @@ package Bean;
 import java.util.ArrayList;
 
 public class Student {
-	public boolean isPass() {
-		return isPass;
-	}
-
-	public void setPass(boolean isPass) {
-		this.isPass = isPass;
-	}
+	
 
 	final int pass = 35;
 	private int id;
@@ -75,6 +69,13 @@ public class Student {
 
 	public void setSubject(ArrayList<Subject> subject) {
 		this.subject = subject;
+	}
+	public boolean isPass() {
+		return isPass;
+	}
+
+	public void setPass(boolean isPass) {
+		this.isPass = isPass;
 	}
 
 	@Override
